@@ -45,13 +45,25 @@ let answer4html = document.querySelector("#answer4")
 answer4html.innerHTML = listWood
 
 //ANSWER 5
-testx = items.map(function (a) {
-  items.forEach(function (a) {
-    return items[1].materials.length
+
+testx = items
+  .map(function (a) {
+    mtlCount = a.materials.length
+    if (a.materials.length >= 8) {
+      return `<h4>${a.title}</h4><ul>Number of Materials: ${mtlCount}</ul><li>${a.materials}</li>`
+    }
   })
-})
-// let answer4html = document.querySelector("#answer4")
-// answer4html.innerHTML = listWood
+  .join("")
+
+// xlist = items
+//   .map(function (a) {
+//     if (a.materials.length >= 8) {
+//       return `${a.title}`
+//     }
+//   })
+//   .join("")
+let answer5html = document.querySelector("#answer5")
+answer5html.innerHTML = testx
 
 //ANSWER 6
 
